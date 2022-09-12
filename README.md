@@ -1,5 +1,5 @@
 # QuizApp
-<div class ="center">
+<div>
 <img src="https://user-images.githubusercontent.com/24587856/189755800-eb4c37ed-fe01-4a80-97af-7296dcb0b9b8.png" width="300" height="630">
 <img src="https://user-images.githubusercontent.com/24587856/189755817-83cac9db-6048-4a91-bc1b-e8600017949c.png" width="300" height="630">
  </div>
