@@ -1,5 +1,5 @@
 # QuizApp
-<div>
+<div class ="center">
 <img src="https://user-images.githubusercontent.com/24587856/189755800-eb4c37ed-fe01-4a80-97af-7296dcb0b9b8.png" width="300" height="630">
 <img src="https://user-images.githubusercontent.com/24587856/189755817-83cac9db-6048-4a91-bc1b-e8600017949c.png" width="300" height="630">
  </div>
@@ -18,6 +18,7 @@
 <img src="https://user-images.githubusercontent.com/24587856/189755851-6a9fa1f6-0a76-40c2-b3d3-c2ec3831ad68.png" width="300" height="630">
 <img src="https://user-images.githubusercontent.com/24587856/189755858-516936c7-93f1-4f3a-bf6d-79fe9875ffbd.png" width="300" height="630">
 </div>
+<hr />
 <div>
 <img src="https://user-images.githubusercontent.com/24587856/189755884-e41b61bd-9739-4d38-afd0-cd69f4f8aed3.png" width="300" height="630">
 </div>
