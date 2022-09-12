@@ -2,4 +2,7 @@
     <string name="app_name">QuizApp</string>
     <string name="imageDescription">Flag Image</string>
     <string name="btnSubmitText">SUBMIT</string>
+    <string name="tvResultText">Result</string>
+    <string name="hey_congratulations">Hey, Congratulations!</string>
+    <string name="trophyImageDescription">image</string>
 </resources>
