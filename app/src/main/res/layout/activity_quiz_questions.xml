@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,6 +14,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id = "@+id/tvQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -24,11 +24,12 @@
             tools:text="What country does this flag belong to?"/>
 
         <ImageView
+            android:id = "@+id/ivFlag"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/imageDescription"
-            tools:src="@drawable/ic_flag_of_germany"/>
+            tools:src="@drawable/ic_flag_of_turkiye"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,21 +39,83 @@
             android:layout_marginTop="10dp"
             >
             <ProgressBar
+                android:id = "@+id/progressBar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:max="10"
-                android:progress="5"
+                tools:max="11"
+                tools:progress="5"
                 android:indeterminate="false"/>
             <TextView
+                android:id = "@+id/tvProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_gravity="center"
                 android:padding="15dp"
-                tools:text="5/10"/>
+                tools:text="5/11"/>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvOptionOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_option_border_bg"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            tools:text="Android"
+            />
+        <TextView
+            android:id="@+id/tvOptionTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_option_border_bg"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            tools:text="Android"
+            />
+        <TextView
+            android:id="@+id/tvOptionThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_option_border_bg"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            tools:text="Android"
+            />
+        <TextView
+            android:id="@+id/tvOptionFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_option_border_bg"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            tools:text="Android"
+            />
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:text="@string/btnSubmitText"
+            android:textColor="@color/white"
+            android:background="@color/design_default_color_primary"
+            />
     </LinearLayout>
 
 </ScrollView>
