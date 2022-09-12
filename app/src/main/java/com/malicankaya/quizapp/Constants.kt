@@ -32,7 +32,7 @@ object Constants {
             question,
             R.drawable.ic_flag_of_turkiye,
             "Syria", "Tuvalu",
-            "Turkiye", "Azerbaijan", 1
+            "Turkiye", "Azerbaijan", 3
         )
 
         questionsList.add(que3)

@@ -64,7 +64,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     @SuppressLint("SetTextI18n")
     private fun setQuestion() {
-
+        defaultOptionsView()
         val question = questionsList!![currentPosition - 1]
         tvQuestion?.text = question.question
         ivFlag?.setImageResource(question.image)
@@ -76,20 +76,16 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tvOptionThree?.text = question.optionThree
         tvOptionFour?.text = question.optionFour
 
-        if (currentPosition == questionsListSize) {
-            btnSubmit?.text = "FINISH"
-        } else {
-            btnSubmit?.text = "SUBMIT"
-        }
+        btnSubmit?.text = "SUBMIT"
 
     }
 
-    private fun selectedOptionView(tv: TextView, selectedOptionNum: Int){
+    private fun selectedOptionView(tv: TextView, selectedOptionNum: Int) {
         defaultOptionsView()
         selectedOptionPosition = selectedOptionNum
 
         tv.setTextColor(Color.parseColor("#363A43"))
-        tv.setTypeface(tv.typeface,Typeface.BOLD)
+        tv.setTypeface(tv.typeface, Typeface.BOLD)
         tv.background = ContextCompat.getDrawable(
             this,
             R.drawable.selected_option_border_bg
@@ -111,7 +107,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             options.add(it)
         }
 
-        for(i in options){
+        for (i in options) {
             i.setTextColor(Color.parseColor("#7A8089"))
             i.typeface = Typeface.DEFAULT
             i.background = ContextCompat.getDrawable(
@@ -121,30 +117,72 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun answerView(selectedAnswer: Int, drawable: Int) {
+
+        when (selectedAnswer) {
+            1 -> {
+                tvOptionOne?.background = ContextCompat.getDrawable(this, drawable)
+            }
+            2 -> {
+                tvOptionTwo?.background = ContextCompat.getDrawable(this, drawable)
+            }
+            3 -> {
+                tvOptionThree?.background = ContextCompat.getDrawable(this, drawable)
+            }
+            4 -> {
+                tvOptionFour?.background = ContextCompat.getDrawable(this, drawable)
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.tvOptionOne ->{
+        when (v?.id) {
+            R.id.tvOptionOne -> {
                 tvOptionOne?.let {
                     selectedOptionView(it, 1)
                 }
             }
-            R.id.tvOptionTwo ->{
+            R.id.tvOptionTwo -> {
                 tvOptionTwo?.let {
                     selectedOptionView(it, 2)
                 }
             }
-            R.id.tvOptionThree ->{
+            R.id.tvOptionThree -> {
                 tvOptionThree?.let {
                     selectedOptionView(it, 3)
                 }
             }
-            R.id.tvOptionFour ->{
+            R.id.tvOptionFour -> {
                 tvOptionFour?.let {
                     selectedOptionView(it, 4)
                 }
             }
             R.id.btnSubmit -> {
+                if(selectedOptionPosition == 0){
+                    currentPosition++
 
+                    if(currentPosition <= questionsListSize){
+                        setQuestion()
+                    }else{
+                        btnSubmit?.text = "FINISH"
+                    }
+
+                }else{
+                    val question = questionsList!![currentPosition-1]
+
+                    if(question.correctAnswer != selectedOptionPosition){
+                        answerView(selectedOptionPosition,R.drawable.wrong_option_border_bg)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                    if(currentPosition < questionsListSize)
+                        btnSubmit?.text = "GO TO NEXT QUESTION"
+                    else
+                        btnSubmit?.text = "FINISH"
+
+                    selectedOptionPosition = 0
+                }
             }
         }
     }
