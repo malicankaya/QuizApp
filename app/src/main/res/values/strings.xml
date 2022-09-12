@@ -5,4 +5,5 @@
     <string name="tvResultText">Result</string>
     <string name="hey_congratulations">Hey, Congratulations!</string>
     <string name="trophyImageDescription">image</string>
+    <string name="btnFinishText">FINISH</string>
 </resources>

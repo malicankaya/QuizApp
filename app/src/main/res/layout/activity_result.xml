@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="FINISH"
+        android:text="@string/btnFinishText"
         android:textColor="@color/design_default_color_primary"
         android:backgroundTint="@color/white"
         android:textSize="18sp"

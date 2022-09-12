@@ -3,6 +3,10 @@ package com.malicankaya.quizapp
 object Constants {
     private var question: String = "What country does this flag belong to?"
 
+    const val USER_NAME: String = "const_username"
+    const val TOTAL_QUESTIONS: String = "const_totalquestions"
+    const val CORRECT_ANSWERS: String = "const_correctanswers"
+
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()
 
